@@ -21,3 +21,14 @@ menuBtn.addEventListener("click", (e) => {
 navLinks.addEventListener("click", (e) => {
     navLinks.classList.remove("open");
 });
+// Add as many IDs as you want here. 
+// The first 4 should match the ones on your main page.
+const weddingPhotos = [
+  "1L2JoZwvhAv42V4OEJABD7uJ37Ag7c13f", // Image 1
+  "1jsHCpXiut4FFV-tRKvy4MXOsPyNk-5li", // Image 2
+  "1r0eMkvSH5pe7_8P0X3WmmR70I33D-d9z", // Image 3
+  "1LEmRhpHNxb28hrujGWTUHNEMpR4KO8Gr", // Image 4
+  "ID_5_HERE", // These will only show up in the Popup
+  "ID_6_HERE",
+  "ID_7_HERE"
+];
