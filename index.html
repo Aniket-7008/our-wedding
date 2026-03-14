@@ -75,10 +75,25 @@
     <section class="section__container gallery__container" id="gallery">
         <h2 class="section__header">~ PHOTO GALLERY ~</h2>
         <div class="gallery__grid">
-            <img src="https://drive.google.com/thumbnail?id=1L2JoZwvhAv42V4OEJABD7uJ37Ag7c13f&sz=w1000">
-            <img src="https://drive.google.com/thumbnail?id=1jsHCpXiut4FFV-tRKvy4MXOsPyNk-5li&sz=w1000">
-            <img src="https://drive.google.com/thumbnail?id=1r0eMkvSH5pe7_8P0X3WmmR70I33D-d9z&sz=w1000">
-            <img src="https://drive.google.com/thumbnail?id=1LEmRhpHNxb28hrujGWTUHNEMpR4KO8Gr&sz=w1000">
+            <img src="https://drive.google.com/thumbnail?id=1L2JoZwvhAv42V4OEJABD7uJ37Ag7c13f&sz=w1000" onclick="openLightbox(0)">
+            <img src="https://drive.google.com/thumbnail?id=1jsHCpXiut4FFV-tRKvy4MXOsPyNk-5li&sz=w1000" onclick="openLightbox(1)">
+            <img src="https://drive.google.com/thumbnail?id=1r0eMkvSH5pe7_8P0X3WmmR70I33D-d9z&sz=w1000" onclick="openLightbox(2)">
+            <img src="https://drive.google.com/thumbnail?id=1LEmRhpHNxb28hrujGWTUHNEMpR4KO8Gr&sz=w1000" onclick="openLightbox(3)">
+        </div>
+        <div class="gallery__btn" style="margin-top: 40px; text-align: center;">
+            <button class="btn" onclick="openLightbox(0)">VIEW GALLERY</button>
+        </div>
+    </section>
+
+    <section class="section__container instagram__container" id="instagram">
+        <h2 class="section__header">~ INSTAGRAM ~</h2>
+        <div class="instagram__flex">
+            <img src="assets/image-1.jpg" alt="instagram">
+            <img src="assets/image-2.jpg" alt="instagram">
+            <img src="assets/image-3.jpg" alt="instagram">
+            <img src="assets/image-4.jpg" alt="instagram">
+            <img src="assets/image-5.jpg" alt="instagram">
+            <img src="assets/image-6.jpg" alt="instagram">
         </div>
     </section>
 
@@ -93,19 +108,19 @@
                 </div>
             </div>
         </div>
-        <section class="section__container instagram__container" id="instagram">
-  <h2 class="section__header">~ INSTAGRAM ~</h2>
-  <div class="instagram__flex">
-    <img src="assets/image-1.jpg" alt="instagram">
-    <img src="assets/image-2.jpg" alt="instagram">
-    <img src="assets/image-3.jpg" alt="instagram">
-    <img src="assets/image-4.jpg" alt="instagram">
-    <img src="assets/image-5.jpg" alt="instagram">
-    <img src="assets/image-6.jpg" alt="instagram">
-  </div>
-</section>
         <div class="footer__bar">Copyright © 2026 Ishashis & Family.</div>
     </footer>
+
+    <div id="galleryModal" class="modal">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <div class="modal-content">
+            <img id="lightbox-img" src="">
+            <div class="modal-nav">
+                <button class="prev" onclick="changeImage(-1)">&#10094; Prev</button>
+                <button class="next" onclick="changeImage(1)">Next &#10095;</button>
+            </div>
+        </div>
+    </div>
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
