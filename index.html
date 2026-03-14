@@ -1,94 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Our Eternal Journey | Ishashis</title>
-    <style>
-      /* Smooth Overlay for Music Autoplay */
-      #music-overlay {
-        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-        background: #fff; z-index: 9999; display: flex;
-        align-items: center; justify-content: center; flex-direction: column;
-      }
-      .start-btn {
-        padding: 15px 40px; border: 2px solid #333; background: transparent;
-        font-family: 'Georgia', serif; cursor: pointer; letter-spacing: 2px;
-      }
-      /* Video Container for YouTube */
-      .video__container {
-        position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
-        max-width: 100%; background: #000; margin-bottom: 2rem;
-      }
-      .video__container iframe {
-        position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      }
-    </style>
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="styles.css"/>
+    <title>Our Wedding | Ishashis</title>
+</head>
+<body>
+
     <div id="music-overlay">
-      <h2>Welcome to Our Story</h2>
-      <button class="start-btn" onclick="initPage()">ENTER EXPERIENCE</button>
+        <div class="overlay-content">
+            <h2 class="section__header">WELCOME TO OUR STORY</h2>
+            <button class="btn" onclick="startExperience()">ENTER & PLAY MUSIC</button>
+        </div>
     </div>
 
     <audio id="bg-music" loop>
-      <source src="YOUR_DIRECT_AUDIO_URL_HERE" type="audio/mpeg" />
+        <source src="wedding-song.mp3" type="audio/mpeg">
     </audio>
 
     <header class="header" id="home">
-      <nav>
-        <div class="nav__header">
-          <div class="nav__logo"><a href="#">OUR WEDDING</a></div>
-          <div class="nav__menu__btn" id="menu-btn"><i class="ri-menu-line"></i></div>
-        </div>
-        <ul class="nav__links" id="nav-links">
-          <li><a href="#home">HOME</a></li>
-          <li><a href="#about">OUR STORY</a></li>
-          <li class="nav__logo"><a href="#">ISHASHIS</a></li>
-          <li><a href="#video">VIDEO</a></li>
-          <li><a href="#gallery">GALLERY</a></li>
-        </ul>
-      </nav>
+        <nav>
+            <div class="nav__header">
+                <div class="nav__logo"><a href="#">OUR WEDDING</a></div>
+                <div class="nav__menu__btn" id="menu-btn"><i class="ri-menu-line"></i></div>
+            </div>
+            <ul class="nav__links" id="nav-links">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">OUR STORY</a></li>
+                <li class="nav__logo"><a href="#">ISHASHIS</a></li>
+                <li><a href="#video">VIDEOS</a></li>
+                <li><a href="#gallery">GALLERY</a></li>
+            </ul>
+        </nav>
     </header>
 
     <div class="section__container about__container" id="about">
-      <h2 class="section__header">A PROMISE OF FOREVER</h2>
-      <p class="section__description">
-        Celebrating the union of two souls. From our first meeting to the sacred rituals at Jagannath Dham.
-      </p>
-      <img src="https://drive.google.com/thumbnail?id=YOUR_IMAGE_ID&sz=w1000" alt="Couple" />
+        <h2 class="section__header">A PROMISE OF FOREVER</h2>
+        <p class="section__description">
+            With the divine blessings of Lord Jagannath and the love of our parents, 
+            <strong>Ashis & Bijoylaxmi</strong>, we invite you to witness our journey.
+        </p>
+        <p class="section__description">
+            Celebrating our union from the heart of Jagannath Dham to this beautiful new chapter.
+        </p>
+        <img src="assets/logo-dark.png" alt="logo">
     </div>
 
-    <section class="section__container" id="video">
-      <h2 class="section__header">~ OUR HIGHLIGHTS ~</h2>
-      <div class="video__container">
-        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </section>
+    <div class="section__container portfolio__container" id="video">
+        <h2 class="section__header">~ VIDEO HIGHLIGHTS ~</h2>
+        <div class="portfolio__grid">
+            <div class="portfolio__card">
+                <img src="https://img.youtube.com/vi/YOUR_VIDEO_ID_1/maxresdefault.jpg" alt="video">
+                <div class="portfolio__content">
+                    <button class="btn" onclick="playVideo('YOUR_VIDEO_ID_1')">WATCH HIGHLIGHTS</button>
+                </div>
+            </div>
+            <div class="portfolio__card">
+                <img src="https://img.youtube.com/vi/YOUR_VIDEO_ID_2/maxresdefault.jpg" alt="video">
+                <div class="portfolio__content">
+                    <button class="btn" onclick="playVideo('YOUR_VIDEO_ID_2')">WATCH CEREMONY</button>
+                </div>
+            </div>
+        </div>
+        <div id="videoPlayer" style="margin-top:40px; display:none;">
+            <div class="video-wrapper">
+                <iframe id="youtubeFrame" width="100%" height="500" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
 
     <section class="section__container gallery__container" id="gallery">
-      <h2 class="section__header">~ GALLERY ~</h2>
-      <div class="gallery__grid">
-        <img src="https://drive.google.com/thumbnail?id=ID_1&sz=w800" alt="Wedding 1" />
-        <img src="https://drive.google.com/thumbnail?id=ID_2&sz=w800" alt="Wedding 2" />
-        <img src="https://drive.google.com/thumbnail?id=ID_3&sz=w800" alt="Wedding 3" />
-        <img src="https://drive.google.com/thumbnail?id=ID_4&sz=w800" alt="Wedding 4" />
-      </div>
+        <h2 class="section__header">~ PHOTO GALLERY ~</h2>
+        <div class="gallery__grid">
+            <img src="https://drive.google.com/thumbnail?id=ID_1&sz=w1000">
+            <img src="https://drive.google.com/thumbnail?id=ID_2&sz=w1000">
+            <img src="https://drive.google.com/thumbnail?id=ID_3&sz=w1000">
+            <img src="https://drive.google.com/thumbnail?id=ID_4&sz=w1000">
+        </div>
     </section>
 
-    <script>
-      function initPage() {
-        // Hides overlay and plays music
-        document.getElementById('music-overlay').style.display = 'none';
-        const music = document.getElementById('bg-music');
-        music.play();
-      }
-    </script>
+    <footer id="contact">
+        <div class="section__container footer__container">
+            <div class="footer__col">
+                <img src="assets/logo-dark.png" alt="logo">
+                <div class="footer__socials">
+                    <a href="#"><i class="ri-facebook-fill"></i></a>
+                    <a href="#"><i class="ri-instagram-line"></i></a>
+                    <a href="#"><i class="ri-youtube-fill"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bar">Copyright © 2026 Ishashis & Family.</div>
+    </footer>
+
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="main.js"></script>
-  </body>
+    <script>
+        function startExperience() {
+            document.getElementById('music-overlay').style.display = 'none';
+            document.getElementById('bg-music').play();
+        }
+
+        function playVideo(videoId) {
+            const frame = document.getElementById("youtubeFrame");
+            const player = document.getElementById("videoPlayer");
+            frame.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&rel=0";
+            player.style.display = "block";
+            player.scrollIntoView({ behavior: "smooth" });
+        }
+    </script>
+</body>
 </html>
