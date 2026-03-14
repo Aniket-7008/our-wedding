@@ -28,7 +28,7 @@ const weddingPhotos = [
   "1jsHCpXiut4FFV-tRKvy4MXOsPyNk-5li", // Image 2
   "1r0eMkvSH5pe7_8P0X3WmmR70I33D-d9z", // Image 3
   "1LEmRhpHNxb28hrujGWTUHNEMpR4KO8Gr", // Image 4
-  "ID_5_HERE", // These will only show up in the Popup
-  "ID_6_HERE",
-  "ID_7_HERE"
+  "1ScTVBVItMVolOlxB4vxUtJ1jhRglNfGx", // These will only show up in the Popup
+  "1-ShtJHcNg8szH-Mufv-__LZq58nCaWlvE",
+  "1U6V4GfBykSd979hgqh9Q8e__gejHE5fhE"
 ];
