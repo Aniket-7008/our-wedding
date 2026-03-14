@@ -1,65 +1,38 @@
-:root {
-  --primary-color: #fdfaf9;
-  --text-dark: #333333;
-  --accent-color: #d4af37; /* Gold accent for wedding feel */
+/* Music Overlay Styling */
+#music-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #ffffff;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-body {
-  margin: 0;
-  font-family: 'Georgia', serif;
-  background-color: var(--primary-color);
-  color: var(--text-dark);
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
 }
 
-.section__container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 5rem 1rem;
+.video-wrapper iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border-radius: 10px;
 }
 
-.section__header {
-  font-size: 2.5rem;
-  font-weight: 400;
-  text-align: center;
-  letter-spacing: 5px;
-  margin-bottom: 2rem;
-}
-
-/* Gallery Grid */
-.gallery__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-}
-
+/* Ensure gallery images look good */
 .gallery__grid img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  transition: 0.3s;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
 .gallery__grid img:hover {
-  transform: scale(1.02);
-}
-
-/* Navigation */
-nav {
-  padding: 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav__links {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-}
-
-.nav__links a {
-  text-decoration: none;
-  color: var(--text-dark);
-  font-size: 0.9rem;
-  letter-spacing: 2px;
+    transform: scale(1.03);
 }
